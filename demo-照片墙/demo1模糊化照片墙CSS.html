@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo：照片墙</title>
+	<style type="text/css">
+		.{
+			margin: 0;
+			padding: 0;
+			font-size:14px;
+			width: 100%;
+			height: 100%;
+		}
+		li{
+			list-style: none;
+			float:left;
+			position: relative;
+		}
+		.st-picture{
+			width: 100%;
+			height: 400px;
+		}
+		
+		.st-panel{
+			width: 100%;
+			height: 100%;
+			margin-left:30px;
+		}
+		.st-panel-item{
+			width: 200px;
+			height: 200px;
+		}
+		.st-min-panel{
+			margin-left: 0;
+			padding-left: 0;
+			width: 200px;
+			height: 200px;
+		}
+		.st-item > a > img{
+			display: block;
+			width: 200px;
+			height: 200px;
+			opacity: 0.6;
+		}
+		.st-min-item > a >img{
+			display: block;
+			width: 100px;
+			height: 100px;
+		}
+		.st-pic_info{
+			display:none;
+		}
+		.st-item > a:hover  > img{
+			opacity: 1;
+		}
+		.st-picture-panel{
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 400px;
+		    left: 0;
+		    top: 15px;
+		    right: 0;
+		    bottom: 0;
+		    opacity: 0.60;
+		    background-color: black;
+		    z-index: 10;
+		    transition: transform 1.0s ease-in-out;
+		}
+		#st-picture-text{
+			display: block;
+		    position: absolute;
+		    width: 238px;
+		    height: 46px;
+		    top: 30%;
+		    left: 44%;
+		    z-index: 11;
+		    font-size:45px;
+		    font-weight: normal;
+		    font-family: "Josefin Slab","Myriad Pro",Arial;
+		    text-shadow: 1px 1px 1px rgba(151,24,64,0.2);
+		    color:#fff;
+		    -webkit-animation:moveDown 0.6s ease-in-out 0.5s backwards;
+		    -moz-animation:moveDown 0.6s ease-in-out 0.5s backwards;
+		    -o-animation:moveDown 0.6s ease-in-out 0.5s backwards;
+		    -ms-animation:moveDown 0.6s ease-in-out 0.5s backwards;
+		    animation:moveDown 0.6s ease-in-out 0.5s backwards;
+		}
+		.st-container:hover > #st-picture-text{
+			display: none;
+			opacity: 1;
+			
+
+		}
+		.st-container:hover > #st-picture-mask{
+			-webkit-transform:translateX(-100%);
+			-ms-transform:translateX(-100%);
+			-o-transform:translateX(-100%);
+			-moz-transform:translateX(-100%);
+			transform:translateX(-100%);
+			
+		}
+		@-webkit-keyframes moveDown{
+			0%{
+				-webkit-transform:translateY(-40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				-webkit-transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+		@-moz-keyframes moveDown{
+			0%{
+				-webkit-transform:translateY(-40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				-webkit-transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+		@-ms-keyframes moveDown{
+			0%{
+				-webkit-transform:translateY(-40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				-webkit-transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+		@-o-keyframes moveDown{
+			0%{
+				-webkit-transform:translateY(-40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				-webkit-transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+		@keyframes moveDown{
+			0%{
+				-webkit-transform:translateY(-40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				-webkit-transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+
+		.st-main-pic{
+			
+		
+		}
+		.st-now_pic{
+			display:block;
+			position:absolute;
+			
+			left: 50%;
+			top: 50%;
+		
+
+		}
+		.st-back_pic{
+			display:block;
+			position:absolute;
+			background: black;
+			opacity: 0.85;
+			left:0;
+			top:0;
+			
+		}
+		.st-close{
+			display: block;
+			position: absolute;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var k = 0;
+			var proMaxHeight = $(window).height();
+			var proMaxWidth = $(window).width();
+			for(var i = 0 ;i <9; i++){
+				$(".st-panel").append("<li class='st-panel-item st-item'></li>");/*给外ul添加li子项，含st-panel-item表示最大的子项  st-item表示含有a的子项*/
+				if(i%2 != 0){
+					/*给偶数项子项添加子ul，并移除st-item*/
+					$(".st-panel-item").eq(i).append("<ul class = 'st-min-panel' ></ul>").removeClass("st-item");
+					/*给st-main-panel 这个ul添加四个li子项，且每个子项包含st-item*/
+					for(var j = 0;j<4;j++){
+						$(".st-min-panel").eq(k).append("<li class='st-min-item st-item'></li>");
+					}
+					k++;
+
+				}
+			}
+        	for(var i = 0 ; i < 18; i++){
+        		var j = i+1;
+        		/*给每个st-item添加a标签和div快*/
+        		$(".st-item").eq(i).append("<a href='#' class='st_item_a'>").append("<div class='st-pic_info'>test<div>");
+        		/*设置资源路径*/
+        		$(".st_item_a").eq(i).append("<img src=\"src/pic ("+ j + ").jpg\">");
+
+        		
+
+
+        	}
+        	
+        	$(".st-item>a").click(function(){
+        			//当我点击小图时，同时出现大图和灰色背景，背景点击后执行clearAll()
+        			clearAll();
+        			var src_pic = $(this).find("img").attr("src");
+        			$(".st-main-pic").append("<img class = \"st-back_pic\">");
+        			$(".st-back_pic").css({
+        				"width":$(window).width(),
+        				"height":$(window).height(),
+
+        			});
+
+      
+
+        			$(".st-main-pic").append("<img class = \"st-now_pic\">");
+        			$(".st-now_pic").attr("src",src_pic);
+        			
+        			var size = new Array(2);
+        			size = changeImageSize($(".st-now_pic"));
+        			//alert(size);
+        			$(".st-now_pic").css({
+        				"width":size[0],
+        				"height":size[1],
+        				"margin-left":-size[0]*0.5,
+        				"margin-top":-size[1]*0.5
+        			});
+        			
+
+
+        			$("#st-picture-mask,#st-picture-text").css("visibility","hidden");
+
+        			$(".st-back_pic").bind("click",function(){
+        				clearAll();
+        				$("#st-picture-mask,#st-picture-text").css("visibility","visible");
+        			});
+
+        			$(".st-main-pic").append("<img class=\"st-close\" src=\"src/close_button.png\">");
+        			var xx = $(".st-now_pic").width();
+        			var x = $(".st-now_pic").offset().left + xx ;
+        			var y = $(".st-now_pic").offset().top;
+        			var close_size = 40;
+        			$(".st-close").css({
+        				"left":x,
+        				"top":y,
+        				"margin-left":-close_size*0.5,
+        				"margin-top":-close_size*0.5,
+        				"width":close_size,
+        				"height":close_size
+        			});
+        			$(".st-close").bind("click",function(){
+        				clearAll();
+        				$("#st-picture-mask,#st-picture-text").css("visibility","visible");
+        			});
+
+
+
+        	});
+        	//清除大图
+        	function clearAll(){
+        		$(".st-main-pic").empty();
+        	}
+
+        	//原图比例缩放函数
+        	function changeImageSize(ImageD){
+        		var image = new Image();
+        		image.src = ImageD.attr("src");
+        		if(image.width>0 && image.height>0){
+	      				var rate = (proMaxWidth/image.width < proMaxHeight/image.height)?proMaxWidth/image.width:proMaxHeight/image.height;
+	    			if(rate <= 1){   
+					     ImageD.width = image.width*rate;
+					     ImageD.height =image.height*rate;
+	    			}
+	    			else {
+	                          ImageD.width = image.width;
+	                          ImageD.height =image.height;
+	                }
+	                
+	                return new Array(ImageD.width,ImageD.height);
+     			}
+        	}
+
+   //      	function proDownImage(ImgD){
+   //    			var image=new Image();
+   //    			image.src=ImgD.src;
+   //    			if(image.width>0 && image.height>0){
+	  //     				var rate = (proMaxWidth/image.width < proMaxHeight/image.height)?proMaxWidth/image.width:proMaxHeight/image.height;
+	  //   			if(rate <= 1){   
+			// 		     ImgD.width = image.width*rate;
+			// 		     ImgD.height =image.height*rate;
+	  //   			}
+	  //   			else {
+	  //                         ImgD.width = image.width;
+	  //                         ImgD.height =image.height;
+	  //               }
+   //   			}
+			// }
+
+        });
+	</script>
+</head>
+<body>
+	
+	<div class="st-container">
+		<div class="st-picture">
+			<ul class="st-panel">
+			</ul>
+			<div class="st-main-pic">
+			</div>
+		</div>
+		<div id="st-picture-mask" class="st-picture-panel">
+		</div>
+		<div id="st-picture-text" >毛球画画</div>
+	</div>
+</body>
+</html>

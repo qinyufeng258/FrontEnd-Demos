@@ -1,0 +1,16 @@
+.tran-1{
+	width: 0px;
+	height: 0px;
+	border: solid transparent;
+	border-bottom: 30px solid red;
+	
+}
+.tran-2{
+	width: 0px;
+	height: 0px;
+	border-left: 30px solid transparent;
+	border-top: 30px solid blue;
+	border-right: 30px solid transparent;
+	border-bottom: 30px solid red;
+	
+}

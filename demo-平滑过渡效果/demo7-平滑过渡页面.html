@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo7-平滑过渡页面</title>
+	<meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+	<meta name="viewprot" content="width=device-width,initial-scale=1">
+	<style type="text/css">
+		@font-face{
+			font-family: "Raphaelicons";
+			src:url('fonts/raphaelicons-webfont.eot') format('eot'),
+				url('fonts/raphaelicons-webfont.svg') format('svg'),
+				url('fonts/raphaelicons-webfont.ttf') format('ttf'),
+				url('fonts/raphaelicons-webfont.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+			    
+		}
+		.{
+			padding: 0;
+			margin: 0;
+			font-family: Georgia,serif;
+			background: #ddd;
+			font-weight: 400;
+			font-size: 15px;
+			color: #333;
+			overflow: hidden;
+			-webkit-font-smooth: antialiased;
+
+
+		}
+		a{
+			text-decoration: none;
+			color: #555;
+		}
+		.clr{
+			width: 0;
+			height: 0;
+			overflow: hidden;
+			clear: both;
+			padding: 0;
+			margin: 0;
+		}
+		.st-container{
+			overflow: hidden;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-family: "Josefin Slab","Myriad Pro",Arial;
+		}
+		.st-container > input,
+		.st-container > a{
+			width: 20%;
+			height: 34px;
+			line-height: 34px;
+			position: fixed;
+			bottom : 0;
+		}
+		.st-container > input{
+			opacity: 0;
+			z-index: 1000;
+
+		}
+		.st-container > a{
+			z-index: 100;
+			font-weight: 700;
+			font-size: 16px;
+			background: #e23a6e;
+			text-align: center;
+			color: #fff;
+			text-shadow: 1px 1px 1px rgba(151,24,64,0.2);
+			cursor: pointer;
+
+			
+		}
+		#st-control-1,#st-control-1 + a{
+			left:0px;
+		}
+		#st-control-2,#st-control-2 + a{
+			left:20%
+		}
+		#st-control-3,#st-control-3 + a{
+			left:40%;
+		}
+		#st-control-4,#st-control-4 + a{
+			left:60%
+		}
+		#st-control-5,#st-control-5 + a{
+			left:80%
+		}
+		.st-container > input:checked +a,
+		.st-container > input:checked:hover + a{
+			background: #821134;
+		}
+		.st-container > input:checked +a:after{
+			content:"";
+			width: 0;
+			height: 0;
+			overflow: hidden;
+			border: 20px solid transparent;
+			border-bottom-color: #821134;
+			position: absolute;
+			bottom: 100%;
+			left:50%;
+			margin-left: -20px;
+		}
+		.st-container > input:hover + a{
+			background: #AD244F;
+		}
+
+		/* 内容区 */
+		.st-scroll,.st-panel{
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		.st-scroll{
+			left: 0;
+			top: 0;
+			-webkit-transform:translate3d(0,0,0);
+			-moz-transform:translate3d(0,0,0);
+			-ms-transform:translate3d(0,0,0);
+			-o-transform:translate3d(0,0,0);
+			transform:translate3d(0,0,0);
+
+			-webkit-backface-visibility:hidden;
+
+			transition: transform 0.5s ease-in-out;
+		}
+		.st-panel{
+			background: #fff;
+			overflow: hidden;
+		}
+		
+		#st-control-1:checked ~ .st-scroll{
+			-webkit-transform: translateY(0%);
+			-moz-transform: translateY(0%);
+			-o-transform: translateY(0%);
+			-ms-transform: translateY(0%);
+			transform: translateY(0%);
+		}
+		#st-control-2:checked ~ .st-scroll{
+			-webkit-transform: translateY(-100%);
+			-moz-transform: translateY(-100%);
+			-o-transform: translateY(-100%);
+			-ms-transform: translateY(-100%);
+			transform: translateY(-100%);
+		}
+		#st-control-3:checked ~ .st-scroll{
+			-webkit-transform: translateY(-200%);
+			-moz-transform: translateY(-200%);
+			-o-transform: translateY(-200%);
+			-ms-transform: translateY(-200%);
+			transform: translateY(-200%);
+		}
+		#st-control-4:checked ~ .st-scroll{
+			-webkit-transform: translateY(-300%);
+			-moz-transform: translateY(-300%);
+			-o-transform: translateY(-300%);
+			-ms-transform: translateY(-300%);
+			transform: translateY(-300%);
+		}
+		#st-control-5:checked ~ .st-scroll{
+			-webkit-transform: translateY(-400%);
+			-moz-transform: translateY(-400%);
+			-o-transform: translateY(-400%);
+			-ms-transform: translateY(-400%);
+			transform: translateY(-400%);
+
+		}
+		.st-desc{
+			width: 200px;
+			height: 200px;
+			background: #fa96b5;
+			position: absolute;
+			left:50%;
+			top: 0;
+			margin-left: -100px;
+			-webkit-transform:translateY(-50%) rotate(45deg);
+			-moz-transform:translateY(-50%) rotate(45deg);
+			-ms-transform:translateY(-50%) rotate(45deg);
+			-o-transform:translateY(-50%) rotate(45deg);
+			transform:translateY(-50%) rotate(45deg);
+			
+		}
+		[data-icon]:after{
+			.
+			width: 200px;
+			height: 200px;
+			color:#fff;
+			font-size:90px;
+			text-align: center;
+			line-height: 200px;
+			position: absolute;
+			left:50%;
+			top:50%;
+			margin: -100px 0 0 -100px;
+			-webkit-transform:rotate(-45deg) translateY(25%);
+			-moz-transform:rotate(-45deg) translateY(25%);
+			-o-transform:rotate(-45deg) translateY(25%);
+			-ms-transform:rotate(-45deg) translateY(25%);
+			transform:rotate(-45deg) translateY(25%);
+			font-family: "Raphaelicons";
+			text-shadow: 1px 1px 1px rgba(151,24,64,0.2);
+		}
+		.st-panel h2{
+			color:#e23a6e;
+			font-size: 54px;
+			line-height: 50px;
+			text-align: center;
+			width: 80%;
+			position: absolute;
+			left:10%;
+			top:50%;
+			margin-top: -70px;
+			text-shadow: 1px 1px 1px rbga(151,24,64,0.2);
+			-webkit-backface-visibility:hidden;
+
+		}
+		#st-control-1:checked ~ .st-scroll #st-panel-1 h2,
+		#st-control-2:checked ~ .st-scroll #st-panel-2 h2,
+		#st-control-3:checked ~ .st-scroll #st-panel-3 h2,
+		#st-control-4:checked ~ .st-scroll #st-panel-4 h2,
+		#st-control-5:checked ~ .st-scroll #st-panel-5 h2{
+			-webkit-animation:moveDown 0.6s ease-in-out 0.2s backwards;
+			-moz-animation:moveDown 0.6s ease-in-out 0.2s backwards;
+			-o-animation:moveDown 0.6s ease-in-out 0.2s backwards;
+			-ms-animation:moveDown 0.6s ease-in-out 0.2s backwards;
+			animation:moveDown 0.6s ease-in-out 0.2s backwards;
+		}
+
+		@-webkit-keyframes moveDown{
+			0%{
+				-webkit-transform:translateY(-40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				-webkit-transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+		@-moz-keyframes moveDown{
+			0%{
+				-moz-transform:translateY(-40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				-moz-transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+
+		@-o-keyframes moveDown{
+			0%{
+				-o-transform:translateY(-40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				-o-transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+		@-webkit-keyframes moveDown{
+			0%{
+				-webkit-transform:translateY(-40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				-webkit-transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+		@keyframes moveDown{
+			0%{
+				transform:translateY(-40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+		.st-panel p{
+			position: absolute;
+			width: 50%;
+			left: 25%;
+			top: 50%;
+			font-size:16px;
+			line-height: 22px;
+			padding: 0;
+			text-align: center;
+			-webkit-backface-visibility:hidden;
+			color: #8b8b8b;
+			margin-top: 10px;
+		}
+		#st-control-1:checked ~ .st-scroll #st-panel-1 p,
+		#st-control-2:checked ~ .st-scroll #st-panel-2 p,
+		#st-control-3:checked ~ .st-scroll #st-panel-3 p,
+		#st-control-4:checked ~ .st-scroll #st-panel-4 p,
+		#st-control-5:checked ~ .st-scroll #st-panel-5 p{
+			-webkit-animation:moveUp 0.6s ease-in-out 0.2s backwards;
+			-moz-animation:moveUp 0.6s ease-in-out 0.2s backwards;
+			-o-animation:moveUp 0.6s ease-in-out 0.2s backwards;
+			-ms-animation:moveUp 0.6s ease-in-out 0.2s backwards;
+			animation:moveUp 0.6s ease-in-out 0.2s backwards;
+		}
+
+
+		@-webkit-keyframes moveUp{
+			0%{
+				-webkit-transform:translateY(40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				-webkit-transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+		@-moz-keyframes moveUp{
+			0%{
+				-moz-transform:translateY(40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				-moz-transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+
+		@-o-keyframes moveUp{
+			0%{
+				-o-transform:translateY(40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				-o-transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+		@-webkit-keyframes moveUp{
+			0%{
+				-webkit-transform:translateY(40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				-webkit-transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+		@keyframes moveUp{
+			0%{
+				transform:translateY(40px);
+				opacity: 0; 	 	
+			}
+			100%{
+				transform:translateY(0px);
+				opacity: 1; 
+			}
+		}
+		.st-color{
+			background-color: #fa96b5;
+
+		}
+		.st-color .st-desc{
+			background-color: #fff;
+		}
+		.st-color [data-icon]:after{
+			color:#fa96b5;
+		}
+		.st-color h2{
+			color:#fff;
+			text-shadow:1px 1px 1px rgba(0,0,0,0.1);
+		}
+		.st-color p{
+			color:rgba(255,255,255,0.5);
+
+		}
+		@media screen and (max-width: 520px) {
+			.st-panel h2{
+				font-size: 42px;
+			}
+			.st-panel p{
+				width:90%;
+				left:10%;
+				margin-top: 0;
+			}
+			.st-container > a{
+				font-size:13px;
+			}
+		}
+
+		@media screen and (max-width: 360px) {
+			.st-panel h2{
+				font-size: 42px;
+			}
+			.st-panel p{
+				width:90%;
+				left:10%;
+				margin-top: 0;
+			}
+			.st-container > a{
+				font-size:10px;
+			}
+			.st-desc{
+				width: 100px;
+				height: 100px;
+				margin-left: -60px;
+			}
+			[data-icon]:after{
+				font-size: 60px;
+				-webkit-transform:rotate(-45deg) translateY(15%);
+				-moz-transform:rotate(-45deg) translateY(15%);
+				-o-transform:rotate(-45deg) translateY(15%);
+				-ms-transform:rotate(-45deg) translateY(15%);
+				transform:rotate(-45deg) translateY(15%);
+			}
+		}
+
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="st-container">
+			<!--nav begin-->
+			<input type="radio" name="radio-set" checked="checked" id="st-control-1">
+			<a href="#st-panel-1">首页</a>
+			<input type="radio" name="radio-set" id="st-control-2">
+			<a href="#st-panel-2">主题</a>
+			<input type="radio" name="radio-set" id="st-control-3">
+			<a href="#st-panel-3">联系</a>
+			<input type="radio" name="radio-set" id="st-control-4">
+			<a href="#st-panel-4">关于</a>
+			<input type="radio" name="radio-set" id="st-control-5">
+			<a href="#st-panel-5">推荐</a>
+			<!--nav end0-->
+			<div class="st-scroll">
+				<section class="st-panel" id="st-panel-1">
+					<div class="st-desc" data-icon="H"></div>
+					<h2>首页</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, nesciunt!</p>
+				</section>
+
+				<section class="st-panel st-color" id="st-panel-2">
+					<div class="st-desc" data-icon="2"></div>
+					<h2>主题</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem adipisci iste aliquam rem quod itaque possimus cupiditate a? Optio, vero.</p>
+				</section>
+
+				<section class="st-panel" id="st-panel-3">
+					<div class="st-desc" data-icon="B"></div>
+					<h2>联系</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque odit sequi fuga! Aperiam, rerum quisquam.</p>
+				</section>
+
+				<section class="st-panel st-color" id="st-panel-4">
+					<div class="st-desc" data-icon="3"></div>
+					<h2>关于</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</section>
+
+				<section class="st-panel" id="st-panel-5">
+					<div class="st-desc" data-icon="4"></div>
+					<h2>推荐</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quis! Earum accusantium totam itaque, error sint cumque, natus in laborum sit animi numquam doloribus consequuntur! Earum, accusantium, eum. Sunt, saepe.</p>
+				</section>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

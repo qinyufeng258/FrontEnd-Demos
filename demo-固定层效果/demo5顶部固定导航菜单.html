@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Demo5:固定层效果</title>
+    <style type="text/css">
+    .{
+      margin: 0;
+      padding: 0;
+    }
+	div#top{
+		position: fixed;
+		
+	}
+    ul.nav{
+
+	  margin-left: 350px;
+      list-style: none; //清除表格样式，比如圆点
+      //height:0px; //整个列表高度为30px
+      
+    }
+    li.toplist{
+      background-color: grey;
+      float:left;  //脱离原流，向左靠拢，变成一行
+      margin-top: 20px;
+
+    }
+    li a{
+      /*
+        设定a为block后，可以填充li元素，因此对其设定居中方有效
+        block>inline-block>inline  ：样式功能逐渐减少
+        通过设定text-decoration来删除/添加下划线
+        width是默认继承父元素宽度的，100%
+      */
+      font-size: 20px;
+      display: block;
+      text-align: center;
+      text-decoration:none;
+      height:30px;
+      line-height: 30px;
+      width:120px;
+      /*
+        两种方式制作圆角导航菜单
+      */
+      //border-top-left-radius:1em;
+      //border-top-right-radius:1em;
+      //background:url(http://img.mukewang.com/53846438000168f901200060.jpg);
+
+    }
+
+    a:hover{
+      background-color: yellow;
+      //background-position: 0 -30px;	
+      
+    }
+
+
+    #mainbody{
+    	padding-top: 50px;
+    }
+    ul.pic{
+    	list-style: none;
+    }
+    .pic li{
+    	text-align: center;
+    }
+    .pic li img{
+		width:200px;
+		height: 200px;
+		overflow: hidden;
+		
+    }
+    </style>
+    <script type="text/javascript" src="G:\Web\jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+  		$(function(){
+  			$('a').hover(
+  				function(){
+  					$(this).css({'height':'50px','line-height':'50px','margin-top':'-20px'});
+  				},
+  				function(){
+  					$(this).css({'height':'30px','line-height':'30px','margin-top':'0px'});
+  				}  				
+  				);
+  		});
+    </script>
+  </head>
+  <body>
+  	<div id='top'>
+	    <ul class='nav'>
+	      <li class='toplist'><a href="#">首页</a></li>
+	      <li class='toplist'><a href="#">展示</a></li>
+	      <li class='toplist'><a href="#">详细</a></li>
+	      <li class='toplist'><a href="#">关于</a></li>
+	      <li class='toplist'><a href="#">联系</a></li></br>
+	    </ul>
+    </div>
+    <div id='mainbody'>
+    	<ul class='pic'>
+			<li><img src="img1.jpg"></li>
+			<li><img src="img2.jpg"></li>
+			<li><img src="img3.jpg"></li>
+			<li><img src="img4.jpg"></li>
+    	</ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Enter the Contest</title>
+    <style type="text/css">
+    .{
+      margin: 0;
+      padding: 0;
+    }
+    ul{
+      list-style: none;
+    }
+    li{
+      width: 50px;
+      display: block;
+      background-color: grey;
+
+      float:left;
+    }
+    li a{
+      /*
+        设定a为block后，可以填充li元素，因此对其设定居中方有效
+        block>inline-block>inline  ：样式功能逐渐减少
+        通过设定text-decoration来删除/添加下划线
+      */
+      display: block;
+      text-align: center;
+      text-decoration:none;
+
+    }
+    a:hover{
+      background-color: yellow;
+      text-decoration:underline;
+    }
+    </style>
+  </head>
+  <body>
+    <ul class='nav'>
+      <li><a href="#">首页</a></li>
+      <li><a href="#">展示</a></li>
+      <li><a href="#">详细</a></li>
+      <li><a href="#">关于</a></li>
+      <li><a href="#">联系</a></li>
+    </ul>
+  </body>
+</html>
+

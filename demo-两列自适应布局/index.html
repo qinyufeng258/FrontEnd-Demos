@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	/*这种方法对于三列布局也是可以的！*/
+	.main{
+		width: 100%;
+		height: 400px;
+		float:left;
+	}
+	.right{
+		margin-left: 210px;
+		background-color: #FFFF66;
+		height: 100%;
+	}
+	.left{
+		float: left;
+		width: 200px;
+		margin-left: -100%;
+		background-color: #66FF66;
+		height: 400px;
+	}
+</style>
+<body>
+	<div class="main">
+		<div class="right"></div>
+	</div>
+	<div class="left"></div>
+	
+</body>
+</html>

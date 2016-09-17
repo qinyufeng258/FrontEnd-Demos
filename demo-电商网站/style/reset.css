@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/*初始化*/
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: 12px; }
+
+img {
+  border: none; }
+
+li {
+  list-style: none; }
+
+input,
+select,
+textarea {
+  outline: none;
+  border: none; }
+
+textarea {
+  resize: none; }
+
+a {
+  color: #666666;
+  text-decoration: none; }
+
+/*清除浮动*/
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+/*# sourceMappingURL=reset.css.map */

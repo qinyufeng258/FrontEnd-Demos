@@ -1,0 +1,372 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ar",
+				"argv"
+			],
+			[
+				"f",
+				"fprintf	fprintf …"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"l",
+				"line-height"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"mari",
+				"margin-top"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"b",
+				"border"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"tes",
+				"test_ip"
+			],
+			[
+				"Thre",
+				"ThreadFunc"
+			],
+			[
+				"if",
+				"ifmain	if __name__ == '__main__'"
+			],
+			[
+				"pi",
+				"pickle"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "c",
+		"selected_items":
+		[
+			[
+				"c",
+				"Set Syntax: C"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"h",
+				"Set Syntax: HTML"
+			],
+			[
+				"hm",
+				"Set Syntax: HTML"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"packin",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 505.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Admin/Desktop/ffffffffffffffffff.c",
+		"/C/Users/Admin/Desktop/ddddddd.c",
+		"/C/Users/Admin/Desktop/Java第二次实验代码",
+		"/G/Web/AnyDemos/Demo：导航菜单/demo3-2.html",
+		"/G/Web/AnyDemos/Demo：导航菜单/demo4.html",
+		"/C/Users/Admin/Desktop/java在线编程,java在线编译器,在线写代码网站.html",
+		"/C/Users/Admin/Desktop/public class HelloWorld{",
+		"/C/Users/Admin/AppData/Local/Temp/360zip$Temp/360$0/JavaC.sublime-build",
+		"/C/Users/Admin/Desktop/prog1.java",
+		"/C/Users/Admin/Desktop/JavaC.sublime-build",
+		"/C/Program Files/Sublime Text 3/Packages/Java.sublime-package",
+		"/C/Users/Admin/AppData/Local/Temp/360zip$Temp/360$1/JavaC.sublime-build",
+		"/C/Users/Admin/AppData/Local/Temp/360zip$Temp/360$2/JavaC.sublime-build",
+		"/G/Web/AnyDemos/Demo：导航菜单/demo2.html",
+		"/G/Web/AnyDemos/Demo：导航菜单/demo3.html",
+		"/G/GameList/Planet/MyCppGame/Resources/Monster.json",
+		"/H/大学资料/大学资料菌/大三上/CCT/集合竞价.cpp",
+		"/C/Users/Admin/Desktop/test.cpp",
+		"/H/大学资料/大学资料菌/大三上/CCT/出现次数最多的数.cpp",
+		"/G/GameList/Planet/MyCppGame/Resources/Planet.json",
+		"/G/GameList/Planet/MyCppGame/Resources/Data/Planet.json",
+		"/G/Web/AnyDemos/Demo：导航菜单/demo1.html",
+		"/G/Web/AnyDemos/Demo：导航菜单/test.html",
+		"/G/Web/Head First HTML&CSS 2/chapter14/contest/form.html",
+		"/C/Users/Admin/Desktop/QWJC/QWJC/style/qwdj_vip.js",
+		"/G/GameList/Planet/MyCppGame/Classes/MonsterInfo.cpp",
+		"/G/GameList/Planet/MyCppGame/Resources/Word/data.plist",
+		"/F/readme.txt",
+		"/C/Users/Admin/Desktop/Knownsec_RD_Checklist_v3.0/res/xss_quiz.txt",
+		"/G/Web/css-01.html",
+		"/C/Users/Admin/Desktop/新建文件夹/about.html",
+		"/C/Users/Admin/Desktop/QWJC/QWJC/script/qwdj_home.js",
+		"/G/Web/test_0x01.html",
+		"/C/Users/Admin/Desktop/QWJC/QWJC/html/qwjc_aboutus.html",
+		"/C/Users/Admin/AppData/Local/Temp/360zip$Temp/360$0/QWJC/html/test.html",
+		"/C/Users/Admin/Desktop/Knownsec_RD_Checklist_v3.0/v3.0.html",
+		"/G/Web/css-01.txt",
+		"/C/Users/Admin/Desktop/算法实验/b.txt",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/G/Web/JavaScript DOM/styles/typography.css",
+		"/G/Web/JavaScript DOM/chp12/scripts/global.js",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Admin/Desktop/柴犬头像.png",
+		"/C/Users/Admin/Desktop/test.js",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/User/node.sublime-build",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/User/node.js",
+		"/G/Python/Python3/BatchRegister/身份证姓名提取.py",
+		"/G/Python/Python3/BatchRegister/代理IP抓取器.py",
+		"/C/Users/Admin/Desktop/ddddd.py",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/User/SublimeREPL.sublime-settings",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/User/Pythonn3.sublime-build",
+		"/G/Python/Python2/AnyTest/多线程Test.py",
+		"/C/Users/Admin/Desktop/sss.py",
+		"/G/Python/Python3/AnyTests/Windows锁屏.py",
+		"/G/Python/Python3/BatchRegister/画梦批量注册.py",
+		"/G/Python/Python3/AcMS/AcMS.py",
+		"/G/Python/Python3/AnyTests/0x01.py",
+		"/G/Python/Python3/PictureTest/Test.py",
+		"/C/Users/Admin/Desktop/ddd.py",
+		"/C/Users/Admin/Desktop/2014101711073747148/sina/sina.py",
+		"/C/Python34/Lib/site-packages/PIL/Image.py",
+		"/G/Python/Python3/BatchRegister/Test.py",
+		"/C/Python34/Lib/site-packages/pytesseract/pytesseract.py",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/User/Python3.sublime-build",
+		"/C/Users/Admin/Desktop/print('Hello World')",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"STREC",
+			"STREC[]  a, STREC[]",
+			"n(  STREC[]  a, STREC[]",
+			"t",
+			"char s char t",
+			";\n",
+			"'>",
+			"head",
+			"nav",
+			"'>\n",
+			"    <",
+			"'>\n",
+			"\n      ",
+			"31533",
+			"><",
+			"!",
+			"newClassName",
+			"world",
+			"moveElement",
+			"newClassName",
+			";\n",
+			"		newClassName = element.className;\n",
+			"getframe",
+			"png",
+			"print"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/C++/C++ Single File.sublime-build",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"untitled"
+			],
+			[
+				"ul",
+				"untitled"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

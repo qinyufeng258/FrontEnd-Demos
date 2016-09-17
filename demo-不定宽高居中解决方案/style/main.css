@@ -1,0 +1,339 @@
+
+html,
+body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-color: #ccc;
+}
+/*flexbox 居中*/
+.parentBox-1
+{
+    display: flex;
+
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    background-color: #7f7f7f;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.childBox-1
+{
+    background-color: #ff6;
+}
+
+
+/*table margin:0 auto*/
+.parentBox-2
+{
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    background-color: #7f7f7f;
+}
+
+.parentBox-2 table
+{
+    margin: 0 auto;
+}
+.childBox-2
+{
+    background-color: #ff6;
+}
+
+
+/*inline text-align:center*/
+.parentBox-3
+{
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    text-align: center;
+
+    background-color: #7f7f7f;
+}
+
+.childBox-3
+{
+    display: inline-block;
+
+    background-color: #ff6;
+}
+
+
+/*relative left:50% left:-50%;*/
+.parentBox-4
+{
+    position: relative;
+    left: 50%;
+
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    background-color: #7f7f7f;
+}
+
+.childBox-4
+{
+    position: relative;
+    left: -50%;
+
+    background-color: #ff6;
+}
+
+/*line height = height*/
+.parentBox-5
+{
+    line-height: 300px;
+
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    background-color: #7f7f7f;
+}
+
+.childBox-5
+{
+    background-color: #ff6;
+}
+
+
+.parentBox-6
+{
+    position: relative;
+
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    background-color: #7f7f7f;
+}
+.childBox-6
+{
+    position: absolute;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background-color: #ff6;
+}
+
+/*table-cell middle*/
+.parentBox-7
+{
+    display: table-cell;
+
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    vertical-align: middle;
+
+    background-color: #7f7f7f;
+}
+
+/*table td'sheight = height*/
+.parentBox-8
+{
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    background-color: #7f7f7f;
+}
+.parentBox-8 table td
+{
+    height: 300px;
+}
+
+
+.parentBox-9
+{
+    display: table-cell;
+
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    background-color: #7f7f7f;
+}
+.oldParentBox
+{
+    display: table;
+
+    border-spacing: 50px;
+    border-collapse: separate;
+}
+
+
+.parentBox-10
+{
+    position: relative;
+
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    background-color: #7f7f7f;
+}
+.spaceBox
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background-color: #6f6;
+}
+
+.parentBox-10 img
+{
+    margin-top: -50%;
+    margin-left: -50%;
+}
+
+.parentBox-11
+{
+    position: relative;
+
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    background-color: #7f7f7f;
+}
+.parentBox-11 img
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+}
+
+.parentBox-12
+{
+    position: relative;
+
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    background-color: #7f7f7f;
+}
+.parentBox-12 .childBox-12
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+}
+
+/*absolute margin负补偿*/
+.parentBox-13
+{
+    position: relative;
+
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    background-color: #7f7f7f;
+}
+.parentBox-13 img
+{   
+
+    position: absolute;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+}
+
+/*absolute translateY*/
+.parentBox-14
+{
+    position: relative;
+
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    background-color: #7f7f7f;
+}
+.childBox-14
+{
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background-color: #ff6;
+}
+
+.parentBox-15
+{
+    position: relative;
+
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    background-color: #7f7f7f;
+}
+
+.boxContainer
+{
+    position: absolute;
+
+
+    width: 400px;
+    height: 200px;
+
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    background-color: #ccc;
+
+    overflow: hidden;
+}
+.parentBox-16{
+    
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+
+    background-color: #7f7f7f;
+    text-align: center;
+    
+}
+.parentBox-16:after{
+    content: " ";
+    display: inline-block;
+    vertical-align: middle;
+    height: 300px;
+    
+}
+.childContents{
+    display: inline-block;
+    border: 1px solid red;
+}

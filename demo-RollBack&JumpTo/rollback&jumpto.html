@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>浏览器对象</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>   
+ </head>
+ <body>
+  <!--先编写好网页布局-->
+  <div>
+  操作成功
+    </br>
+      <span id='second'></span>
+
+      秒后返回主页
+      <a href="#" onclick="rollback()">返回</a>
+  </div>
+
+
+  <script type="text/javascript"> 
+
+   //获取显示秒数的元素，通过定时器来更改秒数。
+    var second = 5;
+    var x;
+    var sec = document.getElementById('second');
+    sec.innerText = second;
+    function clock(){
+        second  = second -1;
+        if(second <= 0){
+           	clearInterval(x);
+           	linkto();
+        }
+        sec.innerText = second;
+    }
+	x = setInterval(clock,1000);
+
+
+   //通过window的location和history对象来控制网页的跳转。
+   function linkto(){
+   		window.location.replace("http://www.imooc.com");
+   }
+   function rollback(){
+   		window.history.back();
+   }
+
+ </script>
+</body>
+</html>

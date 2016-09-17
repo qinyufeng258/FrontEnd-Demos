@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo：照片墙</title>
+	<style type="text/css">
+		.{
+			margin: 0;
+			padding: 0;
+			font-size:14px;
+			width: 100%;
+			height: 100%;
+		}
+		li{
+			list-style: none;
+			float:left;
+			position: relative;
+		}
+		.st-picture{
+			width: 100%;
+			height: 400px;
+			opacity: 0.5;
+		}
+		.st-picture:after{
+			content="毛球画画";
+			position: absolute;
+			width: 100%;
+			height: 400px;
+			left: 50%;
+			top: 10px;
+		}
+		.st-panel{
+			width: 100%;
+			height: 100%;
+			margin-left:30px;
+		}
+		.st-panel-item{
+			width: 200px;
+			height: 200px;
+		}
+		.st-min-panel{
+			margin-left: 0;
+			padding-left: 0;
+			width: 200px;
+			height: 200px;
+		}
+		.st-item > a > img{
+			display: block;
+			width: 200px;
+			height: 200px;
+			opacity: 1;
+		}
+		.st-min-item > a >img{
+			display: block;
+			width: 100px;
+			height: 100px;
+		}
+		.st-pic_info{
+			display:none;
+		}
+		.st-item > a:hover  > img{
+			opacity: 1;
+		}
+		
+		#st-picture-mask{
+			position: absolute;
+			width: 100%;
+			height: 400px;
+		    left: 0;
+		    top: 0;
+		    right: 0;
+		    bottom: 0;
+		    opacity: 0.60;
+		    //background-color: #edf1f4;
+		    z-index: 10;
+		}
+		#st-picture-text{
+		    position: absolute;
+		    width: 238px;
+		    height: 46px;
+		    top: 50%;
+		    left: 50%;
+		    margin: -23px 0 0 -119px;
+		    z-index: 11;
+		}
+		#st-picture-mask:hover + #st-picture-text{
+			display: none;
+		}
+		#st-picture-mask:hover{
+			opacity: 1;
+		}
+	</style>
+	<script type="text/javascript" src="G:\Web\jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var k = 0;
+			for(var i = 0 ;i <9; i++){
+				$(".st-panel").append("<li class='st-panel-item st-item'></li>");/*给外ul添加li子项，含st-panel-item表示最大的子项  st-item表示含有a的子项*/
+				if(i%2 != 0){
+					/*给偶数项子项添加子ul，并移除st-item*/
+					$(".st-panel-item").eq(i).append("<ul class = 'st-min-panel' ></ul>").removeClass("st-item");
+					/*给st-main-panel 这个ul添加四个li子项，且每个子项包含st-item*/
+					for(var j = 0;j<4;j++){
+						$(".st-min-panel").eq(k).append("<li class='st-min-item st-item'></li>");
+					}
+					k++;
+
+				}
+			}
+        	for(var i = 0 ; i < 36; i++){
+        		var j = i+1;
+        		/*给每个st-item添加a标签和div快*/
+        		$(".st-item").eq(i).append("<a href='#' class='st_item_a'>").append("<div class='st-pic_info'>test<div>");
+        		/*设置资源路径*/
+        		$(".st_item_a").eq(i).append("<img src=\"src/pic ("+ j + ").jpg\">");
+        		
+
+        	}
+        });
+	</script>
+</head>
+<body>
+	
+	<div class="st-container">
+		<div class="st-picture">
+			<ul class="st-panel">
+			</ul>
+		</div>
+		<div id="st-picture-mask"></div>
+		<div id="st-picture-text">毛球画画</div>
+	</div>
+</body>
+</html>

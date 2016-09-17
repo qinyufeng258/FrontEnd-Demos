@@ -1,0 +1,24 @@
+*
+{
+    font-family: Input;
+}
+.outBox
+{
+    width: 800px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 40px;
+	overflow: scroll;
+    border: 30px dotted #cf6;
+    background-color: #ccc;
+	background-image: url(../images/ad2.jpg);
+	background-attachment: scroll;
+   	background-clip: content-box;
+	background-repeat: no-repeat;
+    background-origin: border-box;
+    background-size: cover;
+
+}
+.outBox p{
+	background-color: #FF6FCF;
+}

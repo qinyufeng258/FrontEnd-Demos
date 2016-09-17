@@ -1,0 +1,64 @@
+.box-1{
+	width: 300px;
+	background-color: #ccc;
+	margin-bottom: 50px;
+}
+.box-1 img{
+	width: 100px;
+	position: absolute;
+}
+.box-1 p{
+	margin-left: 150px;
+}
+
+.box-2{
+	width: 300px;
+	background-color: #ccc;
+	margin-bottom: 50px;
+}
+.box-2 img{
+	width: 100px;
+	float: left;
+}
+.box-2 p{
+	overflow: hidden;
+	
+}
+
+.box-3{
+	width: 300px;
+	background-color: #ccc;
+	margin-bottom: 50px;
+}
+.box-3 img{
+	width: 100px;
+
+	float: left;
+}
+.box-3 p{
+	display: table-cell;
+	
+}
+
+.box-4{
+	width: 700px;
+	background-color: #ccc;
+	margin-bottom: 50px;
+}
+
+.box-4 img{
+	width: 100px;
+
+	float: left;
+}
+.box-4 p{
+	padding-right: 10px;
+	display: table-cell;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CANVAS</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<canvas id="diagonal"></canvas>
+</body>
+<script>
+	try{
+		document.createElement("canvas").getContext("2d");
+		console.log("HTML5 Canvas is supported in your browser.");
+	}catch(e){
+		console.log("HTML5 Canvas is not supported in your browser!");
+	}
+
+	var gravel = new Image();
+	gravel.src = "chp2-2.jpg";
+	gravel.onload = function(){
+		drawDiagonal();
+	}
+
+
+	function drawDiagonal(){
+
+		var canvas = document.getElementById("diagonal");
+		var context = canvas.getContext("2d");
+
+		context.save();
+		context.scale(0.6,0.3);
+		context.translate(130,190);
+		drawTree(context);
+		context.restore();
+
+		context.save();
+		context.translate(230,150);
+		context.scale(1,0.5);
+		drawTree(context);
+		context.restore();
+
+		
+
+		context.save();
+		context.scale(0.5,0.5);
+		context.translate(0, 300);
+		context.beginPath();
+		context.moveTo(0,0);
+		context.quadraticCurveTo(170, -50, 260, -190);
+		context.quadraticCurveTo(310, -280, 600, -250);
+		context.strokeStyle = context.createPattern(gravel,'repeat');
+		context.lineWidth = 20;
+
+		// context.strokeStyle = "#FF8000";
+		// context.lineWidth = 20;
+		context.stroke();
+		context.restore();
+
+
+
+		
+		
+	}
+
+	function drawTree(context){
+
+		context.save();
+		var trunkGradient = context.createLinearGradient(-5,-50,5,-50);
+		trunkGradient.addColorStop(0,"#663300");
+		trunkGradient.addColorStop(0.4,"#996600");
+		trunkGradient.addColorStop(1,"#552200");
+		context.fillStyle = trunkGradient;
+		context.fillRect(-5,-50,10,50);
+
+		var canopyShadow = context.createLinearGradient(0,-50,0,0);
+		canopyShadow.addColorStop(0,'rgba(0,0,0,0.5)');
+		canopyShadow.addColorStop(0.2,'rgba(0,0,0,0.0)');
+		context.fillStyle = canopyShadow;
+		context.fillRect(-5,-50,10,50);
+
+		createCanopyPath(context);
+		context.restore();
+
+		context.save();
+		context.lineWidth = 4;
+		context.lineJoin = "round";
+		context.strokeStyle = "#66CCFF";
+		context.stroke();
+
+		context.fillStyle = "#008040";
+		context.fill();
+		context.restore();
+
+
+		context.save();
+		context.transform(1,0,-0.5,1,0,0);
+		context.scale(1,0.6);
+		context.fillStyle = 'rgba(0,0,0,0.2)';
+		context.fillRect(-5,-50,10,50);
+		createCanopyPath(context);
+		context.fill();
+		context.restore();
+
+		// context.fillStyle = "#FF00FF";
+		// context.fillRect(-5,-50,10,50);
+
+	}
+	function createCanopyPath(context){
+		context.beginPath();
+		context.moveTo(-25,-50);
+		context.lineTo(-10,-80);
+		context.lineTo(-20,-80);
+		context.lineTo(-5,-110);
+		context.lineTo(-15,-110);
+
+		context.lineTo(0,-140);
+
+		context.lineTo(15,-110);
+		context.lineTo(5,-110);
+		context.lineTo(20,-80);
+		context.lineTo(10,-80);
+		context.lineTo(25,-50);
+		
+		context.closePath();
+
+	}
+	drawDiagonal();
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Enter the Contest</title>
+    <style type="text/css">
+    .{
+      margin: 0;
+      padding: 0;
+    }
+
+    ul{
+      list-style: none; //清除表格样式，比如圆点
+      height:30px; //整个列表高度为30px
+      width:;
+    }
+    li{
+      
+      float:left;  //脱离原流，向左靠拢，变成一行
+      margin-top: 20px;
+    }
+    li a{
+      /*
+        设定a为block后，可以填充li元素，因此对其设定居中方有效
+        block>inline-block>inline  ：样式功能逐渐减少
+        通过设定text-decoration来删除/添加下划线
+        width是默认继承父元素宽度的，100%
+      */
+      display: block;
+      text-align: center;
+      text-decoration:none;
+      height:30px;
+      line-height: 30px;
+      width:120px;
+      /*
+        两种方式制作圆角导航菜单
+      */
+      border-top-left-radius:1em;
+      border-top-right-radius:1em;
+      //background:url(http://img.mukewang.com/53846438000168f901200060.jpg);
+
+    }
+
+    a:hover{
+      background-color: yellow;
+      //background-position: 0 -30px;	
+      
+    }
+    </style>
+    <script type="text/javascript" src="G:\Web\jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+  
+    </script>
+  </head>
+  <body>
+    <ul class='nav'>
+      <li><a href="#">首页</a></li>
+      <li><a href="#">展示</a></li>
+      <li><a href="#">详细</a></li>
+      <li><a href="#">关于</a></li>
+      <li><a href="#">联系</a></li>
+    </ul>
+  </body>
+</html>
+

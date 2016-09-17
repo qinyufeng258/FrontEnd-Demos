@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实践题 - 选项卡</title>
+    <style type="text/css">
+     /* CSS样式制作 */  
+        body{
+            height:100%;
+            width:100%;
+            margin:0px;
+            padding:0px;
+            font-size:14px;
+            overflow: hidden;
+            -webkit-font-smooth: antialiased;
+            
+        }
+        .st-title{
+            z-index:100;
+        }
+        .st-ul{
+            list-style:none;
+
+        }
+        .st-list-1 a,
+        .st-list-2 a,
+        .st-list-3 a{
+            display:block;
+            float:left;
+            background:#fff;
+            width:50px;
+            height:25px;
+            line-height:25px;
+            border:1px solid grey;
+            margin-right:5px;
+            text-decoration:none;
+            text-align:center;
+            border-bottom:3px solid orange;
+            position:absolute;
+            
+        }
+        .st-list-1 a{
+            left:50;
+        }
+        .st-list-2 a{
+            left:100px;
+        }
+        .st-list-3 a{
+            left:160px;
+        }
+        .st-content{
+            float:left;
+            width:250px;
+            height:100px;
+            border:1px solid grey;
+            border-top:3px solid orange;
+            margin-top:-3px;
+            margin-left:30px;
+            line-height:20px;
+            padding-left:10px;
+            position:absolute;
+            top:43px;
+        }
+       
+       
+    </style>
+    <script type="text/javascript" src="G:\Web\jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+         
+    /*// JS实现选项卡切换
+    window.onload = function(){
+        var a = document.getElementsByTagName("a");
+        var content = document.getElementsByClassName("st-content");
+        content[1].style.display = "none";
+        content[2].style.display = "none";
+
+        for(var i=0;i<a.length;i++){
+            a[i].index = i;
+
+            a[i].onclick = function(){
+                
+                 for(var j=0;j<a.length;j++){
+                    a[j].style.borderTop = "1px solid grey";
+                    a[j].style.borderBottom = "3px solid orange";
+                    content[j].style.display = "none";
+                    
+                 } 
+                this.style.borderTop = "3px solid orange";
+                this.style.borderBottom = "2px solid white";
+                content[this.index].style.display = "block";
+               
+
+            };
+        }
+    };*/
+    $(function(){
+        $("div.st-content").css({'display':'none'});
+        $("div.st-content:first-child").css({'display':'block'});     
+        $("a").click(function(){
+            clearAll();
+            $(this).css({'border-top':'3px solid orange'});
+            $(this).css({'border-bottom':'2px solid white'});
+            $("div.st-content").eq($(this).index('a')).css({"display":"block"});
+        });
+    });
+    function clearAll(){
+        var a = document.getElementsByTagName("a");
+        var content = document.getElementsByClassName("st-content");
+        for(var j=0;j<a.length;j++){
+            a[j].style.borderTop = "1px solid grey";
+            a[j].style.borderBottom = "3px solid orange";
+            content[j].style.display = "none";
+                    
+        } 
+    }
+    </script>
+ 
+</head>
+<body>
+<!-- HTML页面布局 -->
+<div class="st-container">
+    <div class="st-content">
+        275万购昌平邻铁三居 总价20万买一居
+    200万内购五环三居 140万安家东三环
+    北京首现零首付楼盘 53万购东5环50平
+    京楼盘直降5000 中信府 公园楼王现房
+    </div>
+    
+    <div class="st-content" >
+        40平出租屋大改造 美少女的混搭小窝
+     经典清新简欧爱家 90平老房焕发新生 
+     新中式的酷色温情 66平撞色活泼家居
+     瓷砖就像选好老婆 卫生间烟道的设计
+    </div>
+    
+    <div class="st-content">
+         通州豪华3居260万 二环稀缺2居250w甩
+     西3环通透2居290万 130万2居限量抢购
+     黄城根小学学区仅260万 121平70万抛!
+     独家别墅280万 苏州桥2居优惠价248万
+ 
+    </div>
+
+    <div class="st-title">
+        <ul class="st-ul">
+            <li class="st-list-1"><a href="#">房产</a></li>
+            <li class="st-list-2"><a href="#">家居</a></li>
+            <li class="st-list-3"><a href="#">二手房</a></li>
+        </ul>
+    </div>
+   
+    
+    
+</div>
+
+ 
+</body>
+</html>
